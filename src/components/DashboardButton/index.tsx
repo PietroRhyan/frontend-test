@@ -1,4 +1,4 @@
-import { GoGraph } from 'react-icons/go'
+import { FaChartBar } from 'react-icons/fa'
 import { VariantProps, tv } from 'tailwind-variants'
 
 const buttonWrapper = tv({
@@ -12,7 +12,7 @@ const buttonWrapper = tv({
 })
 
 const button = tv({
-  base: 'flex items-center justify-center bg-purple font-semibold text-dark-purple transition-all duration-200 group-hover:bg-opacity-80 group-hover:text-white',
+  base: 'flex items-center justify-center bg-purple font-semibold text-dark-purple transition-all duration-200 group-hover:bg-opacity-80 group-hover:text-dark-text',
   variants: {
     buttonStyle: {
       small: 'gap-1 rounded-md px-4 py-3 text-sm',
@@ -37,7 +37,7 @@ export function DashboardButton({
   return (
     <div className={buttonWrapper({ wrapperStyle: buttonStyle })}>
       <button className={button({ buttonStyle })}>
-        {hasIcon ? <GoGraph size={18} /> : null}
+        {hasIcon ? <FaChartBar size={18} /> : null}
         {title}
       </button>
     </div>

@@ -1,14 +1,14 @@
-<svg width="641" height="641" viewBox="0 0 641 641" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_f_6_109)">
-<path d="M422 320.5C422 376.557 376.557 422 320.5 422C264.443 422 219 376.557 219 320.5C219 264.443 264.443 219 320.5 219C376.557 219 422 264.443 422 320.5Z" fill="url(#paint0_linear_6_109)"/>
+<svg width="422" height="641" viewBox="0 0 422 641" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f_6_107)">
+<path d="M422 320.5C422 376.557 376.557 422 320.5 422C264.443 422 219 376.557 219 320.5C219 264.443 264.443 219 320.5 219C376.557 219 422 264.443 422 320.5Z" fill="url(#paint0_linear_6_107)"/>
 </g>
 <defs>
-<filter id="filter0_f_6_109" x="0.5" y="0.5" width="640" height="640" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_f_6_107" x="0.5" y="0.5" width="640" height="640" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="109.25" result="effect1_foregroundBlur_6_109"/>
+<feGaussianBlur stdDeviation="109.25" result="effect1_foregroundBlur_6_107"/>
 </filter>
-<linearGradient id="paint0_linear_6_109" x1="343.5" y1="219" x2="305" y2="459.5" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_6_107" x1="343.5" y1="219" x2="305" y2="459.5" gradientUnits="userSpaceOnUse">
 <stop stop-color="#602BF5" stop-opacity="0.66"/>
 <stop offset="1" stop-color="#126EF8" stop-opacity="0.28"/>
 </linearGradient>
