@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #F2EBF4;
+  color: #4D4949;
+}
+
+/* Fonts */
+.text-grotesk {
+  font-family: var(--font-grotesk);
+}
+
+.text-krona {
+  font-family: var(--font-krona);
+}

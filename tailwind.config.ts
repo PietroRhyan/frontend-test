@@ -2,17 +2,22 @@ import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.tsx',
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      colors: {
+        bg: "#F2EBF4",
+        "bg-gray": "#E4E4E4",
+
+        "light-text": "#7A7A7A",
+        text: "#4D4949",
+        "dark-text": "#1E1E1E",
+
+        "light-purple": "#D987FF",
+        purple: "#C548FF",
+        "dark-purple": "#5D0786"
+      }
     },
   },
   plugins: [],
