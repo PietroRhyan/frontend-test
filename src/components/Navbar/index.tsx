@@ -13,15 +13,15 @@ export function Navbar() {
   const { isOpen, switchVisibility } = MobileMenu()
 
   return (
-    <header className="fixed left-1/2 top-4 z-50 w-full max-w-7xl -translate-x-1/2 px-8">
+    <header className="fixed left-1/2 top-4 z-50 w-full max-w-7xl -translate-x-1/2 px-4 sm:px-8">
       <div className="flex w-full items-center justify-between rounded-xl border border-light-purple bg-[#F5F5F550] p-3 backdrop-blur-md">
-        <div className="flex items-center justify-center gap-[6px]">
+        <Link href="/" className="flex items-center justify-center gap-[6px]">
           <div>
             <Image src={logo} alt="Logo Icon" width={30} height={42} />
           </div>
 
           <span className="text-krona text-xl text-[#8F30BC]">Logo</span>
-        </div>
+        </Link>
 
         {/* Only appears before 480px screen width */}
         <button

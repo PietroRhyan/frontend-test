@@ -12,8 +12,8 @@ import elipse from 'public/bg-images/ellipse.svg'
 
 export default function Home() {
   return (
-    <main className="relative border border-transparent">
-      <section className="mx-auto max-w-7xl px-8 pt-[112px] md:pt-[150px]">
+    <main className="relative">
+      <section className="mx-auto max-w-7xl px-4 pt-[112px] sm:px-8 md:pt-[150px]">
         <div className="mb-8">
           <DashboardNotoriousIcon />
         </div>

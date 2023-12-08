@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { ComponentProps } from 'react'
 import { FaChartBar } from 'react-icons/fa'
 import { VariantProps, tv } from 'tailwind-variants'
@@ -39,11 +40,14 @@ export function DashboardButton({
   onClick,
 }: DashboardButtonProps) {
   return (
-    <div className={buttonWrapper({ wrapperStyle: buttonStyle })}>
+    <Link
+      href="/dashboard"
+      className={buttonWrapper({ wrapperStyle: buttonStyle })}
+    >
       <button onClick={onClick} className={button({ buttonStyle })}>
         {hasIcon ? <FaChartBar size={18} /> : null}
         {title}
       </button>
-    </div>
+    </Link>
   )
 }
