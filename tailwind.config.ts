@@ -28,6 +28,7 @@ const config: Config = {
       slg: '845px',
       lg: '976px',
       lgp: '1024px',
+      'custom-lgp': '1180px',
       xl: '1440px',
     },
   },

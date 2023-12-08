@@ -12,14 +12,14 @@ import elipse from 'public/bg-images/ellipse.svg'
 
 export default function Home() {
   return (
-    <main className="relative h-screen overflow-hidden border border-transparent">
-      <section className="mx-auto max-w-7xl pt-[150px]">
+    <main className="relative border border-transparent">
+      <section className="mx-auto max-w-7xl px-8 pt-[112px] md:pt-[150px]">
         <div className="mb-8">
           <DashboardNotoriousIcon />
         </div>
 
-        <div className="mb-[25px] flex flex-col justify-center gap-4">
-          <h1 className="text-grotesk max-w-3xl text-5xl font-bold tracking-tight text-dark-text">
+        <div className="mb-5 flex flex-col justify-center gap-4 md:mb-[25px]">
+          <h1 className="text-grotesk max-w-3xl text-4xl font-bold tracking-tight text-dark-text md:text-5xl">
             O website de administração de usuários mais{' '}
             <span className="bg-gradient-to-r from-purple to-dark-purple bg-clip-text text-transparent">
               rápido
@@ -70,7 +70,7 @@ export default function Home() {
       <div className="absolute right-0 top-0 -z-30">
         <Image src={grid} alt="Grid" draggable="false" />
 
-        <div className="absolute right-0 top-1/2 z-10 h-[350px] w-[420px] -translate-y-32 rounded-l-md bg-bg-gray py-2 pl-2">
+        <div className="absolute right-0 top-1/2 z-10 hidden h-[350px] w-[420px] -translate-y-32 rounded-l-md bg-bg-gray py-2 pl-2 custom-lgp:block">
           <div className="flex h-full w-full items-center justify-center bg-white text-2xl font-semibold text-dark-text">
             Uma foto maneira
           </div>

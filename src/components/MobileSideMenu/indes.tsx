@@ -18,7 +18,7 @@ export function MobileSideMen() {
       ></div>
       <aside
         role="menu"
-        className="absolute right-3 top-full z-50 flex translate-y-2 flex-col gap-6 rounded-lg border border-gray-200 bg-[#FFF] p-2 shadow-thin"
+        className="absolute right-3 top-full z-50 flex translate-y-2 flex-col gap-2 rounded-lg border border-gray-200 bg-[#FFF] p-2 shadow-thin"
       >
         <div className="flex items-center justify-between">
           <h3 className="text-sm font-semibold text-dark-text">Menu</h3>

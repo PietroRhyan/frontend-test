@@ -17,7 +17,7 @@ const button = tv({
   variants: {
     buttonStyle: {
       small: 'gap-1 rounded-md px-4 py-3 text-sm',
-      big: 'gap-[6px] rounded-lg px-[26px] py-[15px] text-base',
+      big: 'gap-[6px] rounded-lg px-[18px] py-[12px] text-sm md:px-[24px] md:py-[14px] md:text-base',
     },
   },
   defaultVariants: {
