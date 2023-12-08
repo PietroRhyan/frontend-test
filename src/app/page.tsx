@@ -12,7 +12,7 @@ import elipse from 'public/bg-images/ellipse.svg'
 
 export default function Home() {
   return (
-    <main className="relative border border-transparent">
+    <main className="relative h-screen overflow-hidden border border-transparent">
       <section className="mx-auto max-w-7xl pt-[150px]">
         <div className="mb-8">
           <DashboardNotoriousIcon />

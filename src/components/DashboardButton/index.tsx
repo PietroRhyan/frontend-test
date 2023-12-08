@@ -1,3 +1,4 @@
+import { ComponentProps } from 'react'
 import { FaChartBar } from 'react-icons/fa'
 import { VariantProps, tv } from 'tailwind-variants'
 
@@ -24,7 +25,9 @@ const button = tv({
   },
 })
 
-interface DashboardButtonProps extends VariantProps<typeof button> {
+interface DashboardButtonProps
+  extends VariantProps<typeof button>,
+    ComponentProps<'button'> {
   title: string
   hasIcon?: boolean
 }
@@ -33,10 +36,11 @@ export function DashboardButton({
   title,
   hasIcon,
   buttonStyle,
+  onClick,
 }: DashboardButtonProps) {
   return (
     <div className={buttonWrapper({ wrapperStyle: buttonStyle })}>
-      <button className={button({ buttonStyle })}>
+      <button onClick={onClick} className={button({ buttonStyle })}>
         {hasIcon ? <FaChartBar size={18} /> : null}
         {title}
       </button>

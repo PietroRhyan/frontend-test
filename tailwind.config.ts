@@ -5,6 +5,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        white: '#F5F5F5',
+
         bg: '#F2EBF4',
         'bg-gray': '#E4E4E4',
 
@@ -19,6 +21,14 @@ const config: Config = {
       boxShadow: {
         thin: '0 4px 10px 0 #00000005, 0 2px 2px 0 #00000015',
       },
+    },
+    screens: {
+      sm: '480px',
+      md: '768px',
+      slg: '845px',
+      lg: '976px',
+      lgp: '1024px',
+      xl: '1440px',
     },
   },
   plugins: [],

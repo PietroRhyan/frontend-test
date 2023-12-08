@@ -3,6 +3,7 @@ import '../styles/globals.css'
 import type { Metadata } from 'next'
 // eslint-disable-next-line camelcase
 import { Inter, Space_Grotesk, Krona_One } from 'next/font/google'
+import Providers from './providers'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const krona = Krona_One({
@@ -38,8 +39,10 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${krona.variable} ${grotesk.variable}`}
       >
-        <Navbar />
-        {children}
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   )
