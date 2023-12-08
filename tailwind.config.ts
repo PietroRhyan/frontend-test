@@ -1,8 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  content: ['./src/**/*.tsx'],
-
+  content: ['./src/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -18,6 +17,10 @@ const config: Config = {
         'light-purple': '#D987FF',
         purple: '#C548FF',
         'dark-purple': '#5D0786',
+
+        'light-green': '#02DE40',
+        green: '#09B73A',
+        'dark-green': '#013D0A',
       },
       boxShadow: {
         thin: '0 4px 10px 0 #00000005, 0 2px 2px 0 #00000015',
