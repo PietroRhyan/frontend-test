@@ -3,11 +3,6 @@ import { RJSFSchema, UiSchema } from '@rjsf/utils'
 export const schema: RJSFSchema = {
   required: ['name', 'email', 'birth'],
   properties: {
-    avatar: {
-      title: 'Avatar',
-      type: 'string',
-      format: 'data-url',
-    },
     name: {
       title: 'Nome',
       type: 'string',

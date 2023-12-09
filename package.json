@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.18.1",
+    "@pqina/pintura": "^8.69.3",
+    "@pqina/react-pintura": "^9.0.2",
     "@rjsf/antd": "^5.15.0",
     "@rjsf/core": "^5.15.0",
     "@rjsf/utils": "^5.15.0",
@@ -19,6 +21,7 @@
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-dropzone": "^14.2.3",
     "react-icons": "^4.12.0"
   },
   "devDependencies": {
