@@ -85,7 +85,10 @@ export function UserTable() {
               ))
             ) : (
               <tr>
-                <td className="px-4 py-3 text-center text-sm font-medium text-light-text">
+                <td
+                  colSpan={4}
+                  className="px-4 py-3 text-center text-sm font-medium text-light-text"
+                >
                   Nenhum usuário cadastrado
                 </td>
               </tr>

@@ -17,7 +17,13 @@ export function Navbar() {
       <div className="flex w-full items-center justify-between rounded-xl border border-light-purple bg-[#F5F5F550] p-3 backdrop-blur-md">
         <Link href="/" className="flex items-center justify-center gap-[6px]">
           <div>
-            <Image src={logo} alt="Logo Icon" width={30} height={42} />
+            <Image
+              src={logo}
+              alt="Logo Icon"
+              width={30}
+              height={42}
+              className="h-[42px] w-[30px]"
+            />
           </div>
 
           <span className="text-krona text-xl text-[#8F30BC]">Logo</span>
