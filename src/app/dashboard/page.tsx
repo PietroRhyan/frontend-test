@@ -15,7 +15,7 @@ export default function Dashboard() {
 
   return (
     <main>
-      <section className="mx-auto max-w-7xl space-y-8 px-4 pt-[112px] sm:px-8 md:pt-[150px]">
+      <section className="mx-auto mb-10 max-w-7xl space-y-8 px-4 pt-[112px] sm:px-8 md:pt-[150px]">
         <div className="space-y-2">
           <h1 className="text-4xl font-bold text-dark-text md:text-5xl">
             Dashboard

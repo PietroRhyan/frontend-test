@@ -10,6 +10,7 @@ export const schema: RJSFSchema = {
     email: {
       title: 'Email',
       type: 'string',
+      format: 'email',
     },
     birth: {
       title: 'Data de Nascimento',
