@@ -4,74 +4,14 @@ import { AddUserButton } from '@/components/AddUserButton'
 import { UserForm } from '@/components/UserForm'
 
 import { useState } from 'react'
-
-import { Table } from 'antd'
-import type { ColumnType } from 'antd/es/table'
-import { UserAvatar } from '@/components/UserAvatar'
-import { UserFormAvatar } from '@/components/UserFormAvatar'
-
-type DataType = {
-  key: string
-  avatar: string
-  name: string
-  email: string
-  birth: string
-}
+import { UserTable } from '@/components/UserTable'
 
 export default function Dashboard() {
   const [openUserForm, setOpenUserForm] = useState(false)
-  const [openUserAvatarForm, setOpenUserAvatarForm] = useState(false)
 
   function handleOpenUserForm() {
     setOpenUserForm(!openUserForm)
   }
-
-  function handleOpenUserAvatarForm() {
-    setOpenUserAvatarForm(!openUserAvatarForm)
-  }
-
-  const columns: ColumnType<DataType>[] = [
-    {
-      title: 'Nome',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: 'Email',
-      dataIndex: 'email',
-      key: 'email',
-    },
-    {
-      title: 'Avatar',
-      dataIndex: 'avatar',
-      key: 'avatar',
-      render: (imageUrl) => (
-        <UserAvatar handleOpenUserAvatarForm={handleOpenUserAvatarForm} />
-      ),
-    },
-    {
-      title: 'D. Nascimento',
-      dataIndex: 'birth',
-      key: 'birth',
-    },
-  ]
-
-  const dataSource: DataType[] = [
-    {
-      key: '1',
-      avatar: 'Avatar',
-      name: 'Mike',
-      email: 'mike@gmail.com',
-      birth: '10/10/2015',
-    },
-    {
-      key: '2',
-      avatar: 'Avatar',
-      name: 'John',
-      email: 'john@gmail.com',
-      birth: '02/03/2015',
-    },
-  ]
 
   return (
     <main>
@@ -91,10 +31,6 @@ export default function Dashboard() {
           <UserForm handleOpenUserForm={handleOpenUserForm} />
         ) : null}
 
-        {openUserAvatarForm ? (
-          <UserFormAvatar handleOpenUserAvatarForm={handleOpenUserAvatarForm} />
-        ) : null}
-
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="text-2xl font-bold text-dark-text">Usuários</h3>
@@ -103,8 +39,9 @@ export default function Dashboard() {
               handleOpenUserForm={handleOpenUserForm}
             />
           </div>
-          <Table dataSource={dataSource} columns={columns} />
         </div>
+
+        <UserTable />
       </section>
     </main>
   )

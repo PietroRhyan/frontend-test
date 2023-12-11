@@ -3,11 +3,13 @@ import Image from 'next/image'
 import { FaPenAlt } from 'react-icons/fa'
 
 type UserAvatarProps = {
+  userKey?: string
   imageUrl?: string
   handleOpenUserAvatarForm: () => void
 }
 
 export function UserAvatar({
+  userKey,
   imageUrl,
   handleOpenUserAvatarForm,
 }: UserAvatarProps) {

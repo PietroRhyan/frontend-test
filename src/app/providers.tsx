@@ -8,6 +8,7 @@ import AntdRegistry from '@/lib/AntdRegistry'
 import { ConfigProvider } from 'antd'
 import { StyleProvider } from '@ant-design/cssinjs'
 import theme from '@/styles/antdThemeConfig'
+import StoreProvider from './storeProvider'
 
 type ProviderProps = {
   children: ReactNode
@@ -15,12 +16,14 @@ type ProviderProps = {
 
 export default function Providers({ children }: ProviderProps) {
   return (
-    <AntdRegistry>
-      <ConfigProvider theme={theme}>
-        <StyleProvider>
-          <HandleMobileMenuProvider>{children}</HandleMobileMenuProvider>
-        </StyleProvider>
-      </ConfigProvider>
-    </AntdRegistry>
+    <StoreProvider>
+      <AntdRegistry>
+        <ConfigProvider theme={theme}>
+          <StyleProvider>
+            <HandleMobileMenuProvider>{children}</HandleMobileMenuProvider>
+          </StyleProvider>
+        </ConfigProvider>
+      </AntdRegistry>
+    </StoreProvider>
   )
 }

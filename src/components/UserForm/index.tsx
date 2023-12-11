@@ -1,14 +1,32 @@
+'use client'
+
 import { Form } from '@rjsf/antd'
 import validator from '@rjsf/validator-ajv8'
 
 import { schema, uiSchema } from '@/lib/form-schema'
 import { FiX } from 'react-icons/fi'
 
+import { create } from '@/lib/features/user/userSlice'
+import { useAppDispatch, useAppSelector } from '@/lib/hooks'
+
 type UserFormProps = {
   handleOpenUserForm: () => void
 }
 
 export function UserForm({ handleOpenUserForm }: UserFormProps) {
+  const users = useAppSelector((state) => state.users.users)
+  const dispatch = useAppDispatch()
+
+  const emailExists = (email: string) => {
+    const userExists = users.filter((user) => user.email === email)
+
+    if (!userExists.length) {
+      return false
+    }
+
+    return true
+  }
+
   return (
     <>
       <div
@@ -28,7 +46,15 @@ export function UserForm({ handleOpenUserForm }: UserFormProps) {
           schema={schema}
           uiSchema={uiSchema}
           validator={validator}
-          onSubmit={({ formData }) => console.log(formData)}
+          onSubmit={({ formData }) => {
+            if (emailExists(formData.email)) {
+              window.alert('Email já cadastrado!')
+              return
+            }
+
+            dispatch(create(formData))
+            handleOpenUserForm()
+          }}
         />
       </div>
     </>
