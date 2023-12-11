@@ -1,6 +1,6 @@
 'use client'
 
-import { AddUserButton } from '@/components/AddUserButton'
+import { AddNewUser } from '@/components/AddNewUser'
 import { UserForm } from '@/components/UserForm'
 
 import { useState } from 'react'
@@ -34,9 +34,10 @@ export default function Dashboard() {
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="text-2xl font-bold text-dark-text">Usuários</h3>
-            <AddUserButton
+            <AddNewUser
               title="Adicionar Usuário"
-              handleOpenUserForm={handleOpenUserForm}
+              onClick={() => handleOpenUserForm()}
+              buttonStyle="big"
             />
           </div>
         </div>

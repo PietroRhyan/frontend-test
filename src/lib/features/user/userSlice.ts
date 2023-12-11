@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
+type UpdateAvatarType = {
+  key?: string
+  avatar: string
+}
+
 type User = {
   key?: string
   avatar?: string
@@ -27,8 +32,19 @@ export const userSlice = createSlice({
 
       state.users.push(action.payload)
     },
+    updateAvatar: (state, action: PayloadAction<UpdateAvatarType>) => {
+      if (!action.payload.key) {
+        return
+      }
+
+      const userIndex = state.users.findIndex(
+        (user) => user.key === action.payload.key,
+      )
+
+      state.users[userIndex].avatar = action.payload.avatar
+    },
   },
 })
 
-export const { create } = userSlice.actions
+export const { create, updateAvatar } = userSlice.actions
 export default userSlice.reducer

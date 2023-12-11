@@ -21,6 +21,10 @@ const config: Config = {
         'light-green': '#02DE40',
         green: '#09B73A',
         'dark-green': '#013D0A',
+
+        'light-red': '#FF8585',
+        red: '#E52020',
+        'dark-red': '#9F1A1A',
       },
       boxShadow: {
         thin: '0 4px 10px 0 #00000005, 0 2px 2px 0 #00000015',

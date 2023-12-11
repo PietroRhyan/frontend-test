@@ -8,9 +8,16 @@ import { FiUpload } from 'react-icons/fi'
 import '@pqina/pintura/pintura.css'
 import { openDefaultEditor } from '@pqina/pintura'
 import Image from 'next/image'
+import { useAppDispatch } from '@/lib/hooks'
+import { updateAvatar } from '@/lib/features/user/userSlice'
+
+import { getSignedURL } from '@/app/actions'
+import { FormButton } from '../FormButton'
 
 type DropzoneProps = {
+  userKey?: string
   className: string
+  handleOpenUserAvatarForm: () => void
 }
 
 const editImage = (image: any, done: any) => {
@@ -44,8 +51,14 @@ const decreaseImageName = (fileName: string) => {
   return decreasedImageName
 }
 
-export function Dropzone({ className }: DropzoneProps) {
+export function Dropzone({
+  className,
+  userKey,
+  handleOpenUserAvatarForm,
+}: DropzoneProps) {
   const [files, setFiles] = useState<(File & { preview: string })[]>([])
+  const [loading, setLoading] = useState(false)
+  const dispatch = useAppDispatch()
 
   const onDrop = useCallback((acceptedFiles: any) => {
     if (acceptedFiles.length) {
@@ -67,7 +80,7 @@ export function Dropzone({ className }: DropzoneProps) {
 
   const thumbs = files.map((file, index) => (
     <div
-      className="relative w-[130px] rounded-lg border border-gray-200"
+      className="relative mx-auto w-[130px] rounded-lg border border-gray-200"
       key={file.name}
     >
       <div className="relative h-[130px] w-full">
@@ -107,6 +120,38 @@ export function Dropzone({ className }: DropzoneProps) {
     [files],
   )
 
+  const handleSubmitAvatar = async () => {
+    try {
+      if (files.length && userKey) {
+        const signedUrlResult = await getSignedURL(files[0].type, userKey)
+
+        if (signedUrlResult.failure !== undefined) {
+          throw new Error(signedUrlResult.failure)
+        }
+
+        const url = signedUrlResult.success?.url
+
+        setLoading(true)
+        await fetch(url, {
+          method: 'PUT',
+          body: files[0],
+          headers: {
+            'Content-Type': files[0].type,
+          },
+        })
+
+        const imageUrl = url.split('?')[0]
+        dispatch(updateAvatar({ avatar: imageUrl, key: userKey }))
+        handleOpenUserAvatarForm()
+      }
+    } catch (e) {
+      console.log(e)
+      window.alert(e)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <section>
       <div
@@ -114,23 +159,44 @@ export function Dropzone({ className }: DropzoneProps) {
           className,
         })}
       >
-        <input {...getInputProps()} />
+        <input
+          {...getInputProps({
+            multiple: false,
+            name: 'avatar',
+          })}
+        />
         <div className="flex flex-col items-center justify-center gap-3 text-center">
           <FiUpload size={20} />
           {isDragActive ? (
             <p>Drop the files here ...</p>
           ) : (
             <p>
-              Drag &apos;n&apos; drop some files here, or click to select files
+              Mova uma imagem aqui, ou clique na área para selecionar algum
+              arquivo
             </p>
           )}
         </div>
       </div>
       {files.length ? (
-        <div className="mt-4">
-          <p className="text-sm font-semibold text-text">Preview</p>
-          {thumbs}
-        </div>
+        <>
+          <div className="mt-4">
+            <p className="text-sm font-semibold text-text">Preview</p>
+            {thumbs}
+          </div>
+          <div className="mt-4 flex justify-end gap-2">
+            <FormButton
+              title="Limpar"
+              onClick={() => setFiles([])}
+              buttonStyle="cancel"
+            />
+            <FormButton
+              title="Atualizar"
+              isLoading={loading}
+              onClick={() => handleSubmitAvatar()}
+              buttonStyle="submit"
+            />
+          </div>
+        </>
       ) : null}
     </section>
   )

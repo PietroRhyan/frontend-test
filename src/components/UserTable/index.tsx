@@ -7,6 +7,9 @@ import { UserFormAvatar } from '../UserFormAvatar'
 
 export function UserTable() {
   const [openUserAvatarForm, setOpenUserAvatarForm] = useState(false)
+  const [userKeyToUpdateAvatar, setUserKeyToUpdateAvatar] = useState<
+    string | undefined
+  >('')
 
   const users = useAppSelector((state) => state.users.users)
 
@@ -17,7 +20,10 @@ export function UserTable() {
   return (
     <>
       {openUserAvatarForm ? (
-        <UserFormAvatar handleOpenUserAvatarForm={handleOpenUserAvatarForm} />
+        <UserFormAvatar
+          userKey={userKeyToUpdateAvatar}
+          handleOpenUserAvatarForm={handleOpenUserAvatarForm}
+        />
       ) : null}
 
       <table className="mx-auto w-full overflow-hidden rounded-lg border shadow-thin">
@@ -40,8 +46,11 @@ export function UserTable() {
                 <td className="px-4 py-3 text-sm md:text-base">{user.email}</td>
                 <td className="px-4 py-3 text-sm md:text-base">
                   <UserAvatar
-                    handleOpenUserAvatarForm={handleOpenUserAvatarForm}
-                    userKey={user.key}
+                    imageUrl={user.avatar}
+                    onClick={() => {
+                      setUserKeyToUpdateAvatar(user.key)
+                      handleOpenUserAvatarForm()
+                    }}
                   />
                 </td>
                 <td className="hidden items-center px-4 py-3 text-sm md:table-cell md:text-base">
