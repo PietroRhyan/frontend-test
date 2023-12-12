@@ -29,7 +29,7 @@ export function MobileSideMen() {
 
         <div className="flex flex-col items-center justify-center">
           <Link
-            href="#"
+            href="/about"
             className="w-full py-2 text-center text-sm font-semibold text-text"
             onClick={() => switchVisibility(false)}
           >
