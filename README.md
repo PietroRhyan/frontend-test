@@ -53,6 +53,7 @@ $ yarn dev
 ```
 
 Agora é só abrir [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado.
+Obs.: A porta deve ser a 3000 por conta da configuração de CORS do S3 da AWS.
 
 ### Observações e considerações
 

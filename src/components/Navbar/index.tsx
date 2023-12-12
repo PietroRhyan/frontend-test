@@ -42,7 +42,7 @@ export function Navbar() {
         {/* Only appears after 480px screem width */}
         <div className="hidden items-center justify-center gap-4 sm:flex">
           <Link
-            href="#"
+            href="/about"
             className="text-sm font-semibold text-text transition-all duration-200 hover:text-dark-text hover:underline"
           >
             Sobre

@@ -16,7 +16,7 @@ import eyeCatch from 'public/images/eye-catch-image.png'
 export default function Home() {
   return (
     <main className="relative h-screen md:overflow-hidden">
-      <section className="mx-auto h-screen max-w-7xl  px-4 pt-[112px] sm:px-8 md:pt-[120px]">
+      <section className="mx-auto h-screen max-w-7xl px-4 pt-[112px] sm:px-8 md:pt-[120px]">
         <div className="mb-4">
           <DashboardNotoriousIcon />
         </div>
@@ -48,7 +48,7 @@ export default function Home() {
           />
 
           <Link
-            href="#"
+            href="/about"
             className="group flex items-center justify-center gap-1 text-sm font-semibold text-dark-text"
           >
             <p className="underline underline-offset-2">sobre</p>
@@ -79,7 +79,9 @@ export default function Home() {
       </div>
 
       <div className="absolute right-0 top-0 -z-30">
-        <Image src={grid} alt="Grid" draggable="false" />
+        <div className="hidden lg:block">
+          <Image src={grid} alt="Grid" draggable="false" />
+        </div>
 
         <div className="absolute right-0 top-1/2 z-10 hidden h-[350px] w-[420px] -translate-y-32 rounded-l-md bg-bg-gray py-1 pl-1 custom-lgp:block">
           <div className="relative flex h-full w-full items-center justify-center bg-white text-2xl font-semibold text-dark-text">
@@ -87,10 +89,11 @@ export default function Home() {
               src={eyeCatch}
               alt="Promotional Image"
               fill
+              sizes="100vw"
               draggable="false"
               priority
               placeholder="blur"
-              objectFit="cover"
+              style={{ objectFit: 'cover' }}
             />
           </div>
         </div>
