@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Aplicação para Cargo de Frontend Developer
 
-## Getting Started
+Simples aplicação que possui landing page e uma área administrativa de usuários.
 
-First, run the development server:
+Veja: [Observações e consideraçoes](https://github.com/PietroRhyan/frontend-test?tab=readme-ov-file#observações-e-considerações)
+
+### Principais dependências
+
+Abaixo estão listadas as principais dependências que estão sendo utilizadas no projeto.
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [ReactJS](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Ant Design](https://ant.design/)
+- [RJSF](https://github.com/rjsf-team/react-jsonschema-form)
+- [React Pintura](https://pqina.nl/pintura/)
+- [React-Dropzone](https://react-dropzone.js.org/)
+- [AWS SDK](https://aws.amazon.com/sdk-for-javascript/)
+
+### Como instalar o projeto
+
+É necessário você possuir tais ferramentas:
+- [Git](https://git-scm.com/)
+- [Node.JS](https://nodejs.org/en/)
+- [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
+
+Com as tecnologias instaladas, agora clone o repositório na sua pasta desejada
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone o repositório
+$ git clone https://github.com/PietroRhyan/frontend-test.git
+
+# Entre na pasta do projeto
+$ cd frontend-test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Na raiz do projeto, siga os seguintes passos:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Instale as dependências
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+$ npm i
+# ou
+$ yarn
 
-## Learn More
+# Inicie o projeto
 
-To learn more about Next.js, take a look at the following resources:
+$ npm run dev
+# ou
+$ yarn dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Agora é só abrir [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Observações e considerações
 
-## Deploy on Vercel
+Primeiramente agradeço pela oportunidade de ter sido selecionado para esta etapa do processo, estou muito empenhado e realmente quero fazer parte da equipe/ time e crescer, em todos os aspectos, na minha carreira como desenvolvedor.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Independente do resultado, este projeto foi um aprendizado, tanto em novas tecnologias quanto nas diversas maneiras de solucionar os problemas.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Neste projeto utilizei algumas práticas não muito comuns em ambientes de desenvolvimento por fins de praticidade, como a utilização de Estados Globais como armazenamento temporário dos usuários cadastrados e a organização das variáveis de ambiente.
+
+Agradeço e isso é só o começo!
